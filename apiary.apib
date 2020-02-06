@@ -5,22 +5,25 @@ HOST: https://polls.apiblueprint.org/
 
 Swooft API the place where the magic happens (pls change me)
 
-## Account Information collection [/account]
+## Account Information collection [/account/{user_id}]
 
 ### Retrieve a user [GET]
-
++ Parameters
+    + user_id: `1` (string) - Object id string of user
 + Response 200 (application/json)
 
             {
+                "id": "12345678910" 
                 "first_name": "Josh",
                 "last_name": "Dando",
                 "email": "josh@example.com",
+                "telephone": "0771234567567",
                 "contact_preferences": ["email", "post", "telephone"],
                 "favourite_artists": ["Eminem", "Oasis"],
                 "favourite_venues": ["O2", "Manchester Arena"],
                 "ticketmaster": {
                     "email": "ticket@exmaple.com",
-                    "password": "password123!"
+                    "password": "password123!"  // 8-32 char and special
                 }
                 
             }
